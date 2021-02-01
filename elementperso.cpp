@@ -163,16 +163,16 @@ bool ElementPerso::parsePolygone(QDomElement &e, QPainter &qp) {
 bool ElementPerso::parseBorne(QDomElement &e, Schema *s) {
 	// verifie la presence et la validite des attributs obligatoires
 	int bornex, borney;
-	Borne::Orientation borneo;
+	Terminal::Orientation borneo;
 	if (!attributeIsAnInteger(e, QString("x"), &bornex)) return(false);
 	if (!attributeIsAnInteger(e, QString("y"), &borney)) return(false);
 	if (!e.hasAttribute("orientation")) return(false);
-	if (e.attribute("orientation") == "n") borneo = Borne::Nord;
-	else if (e.attribute("orientation") == "s") borneo = Borne::Sud;
-	else if (e.attribute("orientation") == "e") borneo = Borne::Est;
-	else if (e.attribute("orientation") == "o") borneo = Borne::Ouest;
+	if (e.attribute("orientation") == "n") borneo = Terminal::Nord;
+	else if (e.attribute("orientation") == "s") borneo = Terminal::Sud;
+	else if (e.attribute("orientation") == "e") borneo = Terminal::Est;
+	else if (e.attribute("orientation") == "o") borneo = Terminal::Ouest;
 	else return(false);
-	new Borne(bornex, borney, borneo, this, s);
+	new Terminal(bornex, borney, borneo, this, s);
 	++ nb_bornes;
 	return(true);
 }

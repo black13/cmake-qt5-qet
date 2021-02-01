@@ -104,7 +104,7 @@ QPixmap Element::pixmap() {
 QVariant Element::itemChange(GraphicsItemChange change, const QVariant &value) {
 	if (change == QGraphicsItem::ItemPositionChange || change == QGraphicsItem::ItemSelectedChange) {
 		foreach(QGraphicsItem *qgi, childItems()) {
-			if (Borne *p = qgraphicsitem_cast<Borne *>(qgi)) p -> updateConducteur();
+			if (Terminal *p = qgraphicsitem_cast<Terminal *>(qgi)) p -> updateConducteur();
 		}
 	}
 	return(QGraphicsItem::itemChange(change, value));
@@ -219,7 +219,7 @@ void Element::setPos(const QPointF &p) {
 	} else QGraphicsItem::setPos(p);
 	// actualise les bornes / conducteurs
 	foreach(QGraphicsItem *qgi, childItems()) {
-		if (Borne *p = qgraphicsitem_cast<Borne *>(qgi)) p -> updateConducteur();
+		if (Terminal *p = qgraphicsitem_cast<Terminal *>(qgi)) p -> updateConducteur();
 	}
 }
 

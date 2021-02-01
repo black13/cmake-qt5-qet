@@ -11,8 +11,8 @@ Contacteur::Contacteur(QGraphicsItem *parent, Schema *scene) : ElementFixe(paren
 	setHotspot(QPoint(10, 5));
 	
 	// ajout de deux bornes a l'element
-	new Borne(0,  0, Borne::Nord, this, scene);
-	new Borne(0, 60, Borne::Sud,  this, scene);
+	new Terminal(0,  0, Terminal::Nord, this, scene);
+	new Terminal(0, 60, Terminal::Sud,  this, scene);
 }
 
 /**

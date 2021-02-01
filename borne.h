@@ -10,22 +10,22 @@
 		Classe modelisant la � borne � d'un appareil, c'est-a-dire un
 		branchement possible pour un Conducteur.
 	*/
-	class Borne : public QGraphicsItem {
+	class Terminal : public QGraphicsItem {
 		public:
 		// enum definissant l'orientation de la borne
 		enum Orientation {Nord, Sud, Est, Ouest};
 		
-		// permet de caster un QGraphicsItem en Borne avec qgraphicsitem_cast
+		// permet de caster un QGraphicsItem en Terminal avec qgraphicsitem_cast
 		enum { Type = UserType + 1002 };
     	virtual int type() const { return Type; }
 		
 		// constructeurs
-		Borne();
-		Borne(QPointF,      Borne::Orientation, Element * = 0, Schema * = 0);
-		Borne(qreal, qreal, Borne::Orientation, Element * = 0, Schema * = 0);
+		Terminal();
+		Terminal(QPointF,      Terminal::Orientation, Element * = 0, Schema * = 0);
+		Terminal(qreal, qreal, Terminal::Orientation, Element * = 0, Schema * = 0);
 		
 		// destructeur
-		~Borne();
+		~Terminal();
 		
 		// implementation des methodes virtuelles pures de QGraphicsItem
 		void paint(QPainter *, const QStyleOptionGraphicsItem *, QWidget *);
@@ -38,7 +38,7 @@
 		
 		// methodes de lecture
 		QList<Conducteur *> conducteurs() const; 
-		Borne::Orientation orientation() const;
+		Terminal::Orientation orientation() const;
 		inline QPointF amarrageConducteur() const { return(mapToScene(amarrage_conducteur)); }
 		void updateConducteur();
 		
@@ -62,15 +62,15 @@
 		QPointF amarrage_conducteur;
 		QPointF amarrage_elmt;
 		// orientation de la borne
-		Borne::Orientation sens;
+		Terminal::Orientation sens;
 		// liste des conducteurs lies a cette borne
 		QList<Conducteur *> liste_conducteurs;
 		// pointeur vers un rectangle correspondant au bounding rect ; permet de ne calculer le bounding rect qu'une seule fois ; le pointeur c'est parce que le compilo exige une methode const
 		QRectF *br;
-		Borne *borne_precedente;
+		Terminal *borne_precedente;
 		bool hovered;
 		// methode initialisant les differents membres de la borne
-		void initialise(QPointF, Borne::Orientation);
+		void initialise(QPointF, Terminal::Orientation);
 		// differentes couleurs utilisables pour l'effet "hover"
 		QColor couleur_hovered;
 		QColor couleur_neutre;

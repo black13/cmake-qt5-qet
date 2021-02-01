@@ -134,7 +134,7 @@ QDomDocument Schema::toXml(bool schema) {
 	if (liste_elements.isEmpty()) return(document);
 	int id_borne = 0;
 	// table de correspondance entre les adresses des bornes et leurs ids
-	QHash<Borne *, int> table_adr_id;
+	QHash<Terminal *, int> table_adr_id;
 	QDomElement elements = document.createElement("elements");
 	foreach(Element *elmt, liste_elements) {
 		QDomElement element = document.createElement("element");
@@ -151,7 +151,7 @@ QDomDocument Schema::toXml(bool schema) {
 		// pour chaque enfant de l'element
 		foreach(QGraphicsItem *child, elmt -> childItems()) {
 			// si cet enfant est une borne
-			if (Borne *p = qgraphicsitem_cast<Borne *>(child)) {
+			if (Terminal *p = qgraphicsitem_cast<Terminal *>(child)) {
 				// alors on enregistre la borne
 				QDomElement borne = p -> toXml(document);
 				borne.setAttribute("id", id_borne);
@@ -209,8 +209,8 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 	// chargement de tous les Elements du fichier XML
 	QList<Element *> elements_ajoutes;
 	//uint nb_elements = 0;
-	QHash< int, Borne *> table_adr_id;
-	QHash< int, Borne *> &ref_table_adr_id = table_adr_id;
+	QHash< int, Terminal *> table_adr_id;
+	QHash< int, Terminal *> &ref_table_adr_id = table_adr_id;
 	for (QDomNode node = racine.firstChild() ; !node.isNull() ; node = node.nextSibling()) {
 		// on s'interesse a l'element XML "elements" (= groupe d'elements)
 		QDomElement elmts = node.toElement();
@@ -269,8 +269,8 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 			int id_p2 = f.attribute("borne2").toInt();
 			if (table_adr_id.contains(id_p1) && table_adr_id.contains(id_p2)) {
 				// pose le conducteur... si c'est possible
-				Borne *p1 = table_adr_id.value(id_p1);
-				Borne *p2 = table_adr_id.value(id_p2);
+				Terminal *p1 = table_adr_id.value(id_p1);
+				Terminal *p2 = table_adr_id.value(id_p2);
 				if (p1 != p2) {
 					bool peut_poser_conducteur = true;
 					bool cia = ((Element *)p2 -> parentItem()) -> connexionsInternesAcceptees();
@@ -289,7 +289,7 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 	@param table_id_adr Table de correspondance entre les entiers et les bornes
 	@return true si l'ajout a parfaitement reussi, false sinon 
 */
-Element *Schema::elementFromXml(QDomElement &e, QHash<int, Borne *> &table_id_adr) {
+Element *Schema::elementFromXml(QDomElement &e, QHash<int, Terminal *> &table_id_adr) {
 	// cree un element dont le type correspond � l'id type
 	QString type = e.attribute("type");
 	int etat;
