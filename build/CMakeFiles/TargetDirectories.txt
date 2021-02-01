@@ -1,4 +1,0 @@
-/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/rebuild_cache.dir
-/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/edit_cache.dir
-/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/qet.dir
-/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/qet_autogen.dir
