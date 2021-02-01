@@ -1,15 +1,15 @@
 #include "terminal.h"
 #include "schema.h"
 #include "element.h"
-#include "conducteur.h"
+#include "conductor.h"
 
 /**
 	Fonction privee pour initialiser la terminal.
-	@param pf  position du point d'amarrage pour un conducteur
+	@param pf  position du point d'amarrage pour un conductor
 	@param o   orientation de la terminal : Qt::Horizontal ou Qt::Vertical
 */
 void Terminal::initialise(QPointF pf, Terminal::Orientation o) {
-	// definition du pount d'amarrage pour un conducteur
+	// definition du pount d'amarrage pour un conductor
 	amarrage_conducteur  = pf;
 	
 	// definition de l'orientation de la terminal (par defaut : sud)
@@ -26,7 +26,7 @@ void Terminal::initialise(QPointF pf, Terminal::Orientation o) {
 		default           : amarrage_elmt += QPointF(0, -TAILLE_BORNE);
 	}
 	
-	// par defaut : pas de conducteur
+	// par defaut : pas de conductor
 	
 	// QRectF null
 	br = new QRectF();
@@ -53,7 +53,7 @@ Terminal::Terminal() : QGraphicsItem() {
 
 /**
 	initialise une terminal
-	@param pf  position du point d'amarrage pour un conducteur
+	@param pf  position du point d'amarrage pour un conductor
 	@param o   orientation de la terminal : Qt::Horizontal ou Qt::Vertical
 	@param e   Element auquel cette terminal appartient
 	@param s   Scene sur laquelle figure cette terminal
@@ -65,8 +65,8 @@ Terminal::Terminal(QPointF pf, Terminal::Orientation o, Element *e, Schema *s) :
 
 /**
 	initialise une terminal
-	@param pf_x Abscisse du point d'amarrage pour un conducteur
-	@param pf_y Ordonnee du point d'amarrage pour un conducteur
+	@param pf_x Abscisse du point d'amarrage pour un conductor
+	@param pf_y Ordonnee du point d'amarrage pour un conductor
 	@param o    orientation de la terminal : Qt::Horizontal ou Qt::Vertical
 	@param e    Element auquel cette terminal appartient
 	@param s    Scene sur laquelle figure cette terminal
@@ -108,29 +108,29 @@ Terminal::Orientation Terminal::orientation() const {
 }
 
 /**
-	Attribue un conducteur a la terminal
-	@param f Le conducteur a rattacher a cette terminal
+	Attribue un conductor a la terminal
+	@param f Le conductor a rattacher a cette terminal
 */
 bool Terminal::addConducteur(Conductor *f) {
 	// pointeur 0 refuse
 	if (!f) return(false);
 	
-	// une seule des deux bornes du conducteur doit etre this
-	Q_ASSERT_X((f -> borne1 == this ^ f -> borne2 == this), "Terminal::addConducteur", "Le conducteur devrait etre relie exactement une fois a la terminal en cours");
+	// une seule des deux bornes du conductor doit etre this
+	Q_ASSERT_X((f -> borne1 == this ^ f -> borne2 == this), "Terminal::addConducteur", "Le conductor devrait etre relie exactement une fois a la terminal en cours");
 	
-	// determine l'autre terminal a laquelle cette terminal va etre relie grace au conducteur
+	// determine l'autre terminal a laquelle cette terminal va etre relie grace au conductor
 	Terminal *autre_borne = (f -> borne1 == this) ? f -> borne2 : f -> borne1;
 	
 	// verifie que la terminal n'est pas deja reliee avec l'autre terminal
 	bool deja_liees = false;
-	foreach (Conductor* conducteur, liste_conducteurs) {
-		if (conducteur -> borne1 == autre_borne || conducteur -> borne2 == autre_borne) deja_liees = true;
+	foreach (Conductor* conductor, liste_conducteurs) {
+		if (conductor -> borne1 == autre_borne || conductor -> borne2 == autre_borne) deja_liees = true;
 	}
 	
-	// si les deux bornes sont deja reliees, on refuse d'ajouter le conducteur
+	// si les deux bornes sont deja reliees, on refuse d'ajouter le conductor
 	if (deja_liees) return(false);
 	
-	// sinon on ajoute le conducteur
+	// sinon on ajoute le conductor
 	liste_conducteurs.append(f);
 	return(true);
 }
@@ -167,7 +167,7 @@ void Terminal::paint(QPainter *p, const QStyleOptionGraphicsItem *, QWidget *) {
 	p -> setPen(t);
 	p -> drawLine(f, e);
 	
-	// dessin du point d'amarrage au conducteur en bleu
+	// dessin du point d'amarrage au conductor en bleu
 	t.setColor(couleur_hovered);
 	p -> setPen(t);
 	p -> setBrush(couleur_hovered);
@@ -237,7 +237,7 @@ void Terminal::mousePressEvent(QGraphicsSceneMouseEvent *e) {
 	@param e L'evenement souris correspondant
 */
 void Terminal::mouseMoveEvent(QGraphicsSceneMouseEvent *e) {
-	// pendant la pose d'un conducteur, on adopte un autre curseur 
+	// pendant la pose d'un conductor, on adopte un autre curseur 
 	setCursor(Qt::CrossCursor);
 	
 	// d'un mouvement a l'autre, il faut retirer l'effet hover de la terminal precedente
@@ -248,21 +248,21 @@ void Terminal::mouseMoveEvent(QGraphicsSceneMouseEvent *e) {
 		borne_precedente -> update();
 	}
 	
-	// si la scene est un Schema, on actualise le poseur de conducteur
+	// si la scene est un Schema, on actualise le poseur de conductor
 	if (Schema *s = qobject_cast<Schema *>(scene())) s -> setArrivee(e -> scenePos());
 	
 	// on recupere la liste des qgi sous le pointeur
 	QList<QGraphicsItem *> qgis = scene() -> items(e -> scenePos());
 	
 	/* le qgi le plus haut
-	   = le poseur de conducteur
+	   = le poseur de conductor
 	   = le premier element de la liste
 	   = la liste ne peut etre vide
 	   = on prend le deuxieme element de la liste
 	*/
 	Q_ASSERT_X(!(qgis.isEmpty()), "Terminal::mouseMoveEvent", "La liste d'items ne devrait pas etre vide");
 	
-	// s'il y a autre chose que le poseur de conducteur dans la liste
+	// s'il y a autre chose que le poseur de conductor dans la liste
 	if (qgis.size() > 1) {
 		// on prend le deuxieme element de la liste
 		QGraphicsItem *qgi = qgis.at(1);
@@ -278,7 +278,7 @@ void Terminal::mouseMoveEvent(QGraphicsSceneMouseEvent *e) {
 					p -> couleur_hovered = p -> couleur_autorise;
 				else p -> couleur_hovered = p -> couleur_interdit;
 			} else if (p -> nbConducteurs()) {
-				// si la terminal a deja un conducteur
+				// si la terminal a deja un conductor
 				// verifie que cette terminal n'est pas deja reliee a l'autre terminal
 				bool deja_reliee = false;
 				foreach (Conductor *f, liste_conducteurs) {
@@ -290,7 +290,7 @@ void Terminal::mouseMoveEvent(QGraphicsSceneMouseEvent *e) {
 				// interdit si les bornes sont deja reliees, prudence sinon
 				p -> couleur_hovered = deja_reliee ? p -> couleur_interdit : p -> couleur_prudence;
 			} else {
-				// effet si on peut poser le conducteur
+				// effet si on peut poser le conductor
 				p -> couleur_hovered = p -> couleur_autorise;
 			}
 			borne_precedente = p;
@@ -310,7 +310,7 @@ void Terminal::mouseReleaseEvent(QGraphicsSceneMouseEvent *e) {
 	couleur_hovered  = couleur_neutre;
 	// verifie que la scene est bien un Schema
 	if (Schema *s = qobject_cast<Schema *>(scene())) {
-		// on arrete de dessiner l'apercu du conducteur
+		// on arrete de dessiner l'apercu du conductor
 		s -> poseConducteur(false);
 		// on recupere l'element sous le pointeur lors du MouseReleaseEvent
 		QGraphicsItem *qgi = s -> itemAt(e -> scenePos(),QTransform() );
@@ -328,17 +328,17 @@ void Terminal::mouseReleaseEvent(QGraphicsSceneMouseEvent *e) {
 		if (!cia) foreach(QGraphicsItem *item, parentItem() -> childItems()) if (item == p) return;
 		// derniere verification : verifier que cette terminal n'est pas deja reliee a l'autre terminal
 		foreach (Conductor *f, liste_conducteurs) if (f -> borne1 == p || f -> borne2 == p) return;
-		// autrement, on pose un conducteur
+		// autrement, on pose un conductor
 		new Conductor(this, (Terminal *)qgi, 0, scene());
 	}
 }
 
 /**
-	Met a jour l'eventuel conducteur relie a la Terminal.
+	Met a jour l'eventuel conductor relie a la Terminal.
 */
 void Terminal::updateConducteur() {
 	if (scene()) {
-		foreach (Conductor *conducteur, liste_conducteurs) if (!conducteur -> isDestroyed()) conducteur -> update(QRectF()/*scene()->sceneRect()*/);
+		foreach (Conductor *conductor, liste_conducteurs) if (!conductor -> isDestroyed()) conductor -> update(QRectF()/*scene()->sceneRect()*/);
 	}
 }
 

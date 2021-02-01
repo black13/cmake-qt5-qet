@@ -1,11 +1,10 @@
-#ifndef Conductor_H
-	#define Conductor_H
+#ifndef CONDUCTEUR_H
+	#define CONDUCTEUR_H
 	#include <QtWidgets>
 	#include "terminal.h"
 	class Element;
 	/**
-		This class represents a conductor. A conductor connects two element terminals.
-
+		Cette classe represente un conductor. Un conductor relie deux bornes d'element.
 	*/
 	class Conductor : public QGraphicsPathItem {
 		public:
@@ -21,15 +20,15 @@
 		void paint(QPainter *, const QStyleOptionGraphicsItem *, QWidget *);
 		static bool valideXml(QDomElement &);
 		
-		///Premiere Terminal a laquelle le fil est rattache
-		Terminal *Terminal1;
-		///Deuxieme Terminal a laquelle le fil est rattache
-		Terminal *Terminal2;
+		///Premiere terminal a laquelle le fil est rattache
+		Terminal *borne1;
+		///Deuxieme terminal a laquelle le fil est rattache
+		Terminal *borne2;
 		private:
 		/// booleen indiquant si le fil est encore valide
 		bool destroyed;
 		
-		void calculeConductor();
+		void calculeConducteur();
 		bool surLeMemeAxe(Terminal::Orientation, Terminal::Orientation);
 		bool estHorizontale(Terminal::Orientation a);
 		bool estVerticale(Terminal::Orientation a);

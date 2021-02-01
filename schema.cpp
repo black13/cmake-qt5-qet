@@ -1,5 +1,5 @@
 #include <math.h>
-#include "conducteur.h"
+#include "conductor.h"
 #include "contacteur.h"
 #include "elementperso.h"
 #include "schema.h"
@@ -173,10 +173,10 @@ QDomDocument Schema::toXml(bool schema) {
 	if (liste_conducteurs.isEmpty()) return(document);
 	QDomElement conducteurs = document.createElement("conducteurs");
 	foreach(Conductor *f, liste_conducteurs) {
-		QDomElement conducteur = document.createElement("conducteur");
-		conducteur.setAttribute("borne1", table_adr_id.value(f -> borne1));
-		conducteur.setAttribute("borne2", table_adr_id.value(f -> borne2));
-		conducteurs.appendChild(conducteur);
+		QDomElement conductor = document.createElement("conductor");
+		conductor.setAttribute("borne1", table_adr_id.value(f -> borne1));
+		conductor.setAttribute("borne2", table_adr_id.value(f -> borne2));
+		conducteurs.appendChild(conductor);
 	}
 	racine.appendChild(conducteurs);
 	
@@ -264,11 +264,11 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 			// on s'interesse a l'element XML "element" (elements eux-memes)
 			QDomElement f = n.toElement();
 			if (f.isNull() || !Conductor::valideXml(f)) continue;
-			// verifie que les bornes que le conducteur relie sont connues
+			// verifie que les bornes que le conductor relie sont connues
 			int id_p1 = f.attribute("borne1").toInt();
 			int id_p2 = f.attribute("borne2").toInt();
 			if (table_adr_id.contains(id_p1) && table_adr_id.contains(id_p2)) {
-				// pose le conducteur... si c'est possible
+				// pose le conductor... si c'est possible
 				Terminal *p1 = table_adr_id.value(id_p1);
 				Terminal *p2 = table_adr_id.value(id_p2);
 				if (p1 != p2) {
@@ -277,7 +277,7 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 					if (!cia) foreach(QGraphicsItem *item, p2 -> parentItem() -> childItems()) if (item == p1) peut_poser_conducteur = false;
 					if (peut_poser_conducteur) new Conductor(table_adr_id.value(id_p1), table_adr_id.value(id_p2), 0, this);
 				}
-			} else qDebug() << "Le chargement du conducteur" << id_p1 << id_p2 << "a echoue";
+			} else qDebug() << "Le chargement du conductor" << id_p1 << id_p2 << "a echoue";
 		}
 	}
 	return(true);

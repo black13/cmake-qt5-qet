@@ -17,7 +17,7 @@ find_package(Qt5 COMPONENTS PrintSupport Xml Widgets REQUIRED)
 
 add_executable(qet
 aboutqet.cpp
-conducteur.cpp
+conductor.cpp
 del.cpp
 elementfixe.cpp
 entree.cpp

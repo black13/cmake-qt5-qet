@@ -3,7 +3,7 @@
 	#include <QtWidgets>
 	class Schema;
 	#include "element.h"
-	#include "conducteur.h"
+	#include "conductor.h"
 	#define TAILLE_GRILLE 10
 	/**
 		Classe representant un SchemaVue electrique

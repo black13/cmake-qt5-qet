@@ -94,7 +94,7 @@ void SchemaVue::supprimer() {
 		foreach (QGraphicsItem *child, qgi -> childItems()) {
 			// si cet enfant est une terminal
 			if (Terminal *p = qgraphicsitem_cast<Terminal *>(child)) {
-				// alors chaque conducteur de la terminal est recense
+				// alors chaque conductor de la terminal est recense
 				foreach (Conductor *f, p -> conducteurs()) {
 					if (!garbage_conducteurs.contains(f)) garbage_conducteurs.append(f);
 				}

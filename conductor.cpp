@@ -4,31 +4,31 @@
 
 /**
 	Constructeur
-	@param p1     Premiere Terminal auquel le conducteur est lie
-	@param p2     Seconde Terminal auquel le conducteur est lie
-	@param parent Element parent du conducteur (0 par defaut)
-	@param scene  QGraphicsScene auquelle appartient le conducteur
+	@param p1     Premiere Terminal auquel le conductor est lie
+	@param p2     Seconde Terminal auquel le conductor est lie
+	@param parent Element parent du conductor (0 par defaut)
+	@param scene  QGraphicsScene auquelle appartient le conductor
 */
 Conductor::Conductor(Terminal *p1, Terminal* p2, Element *parent, QGraphicsScene *scene) : QGraphicsPathItem(parent) {
-	// Terminals que le conducteur relie
-	Terminal1 = p1;
-	Terminal2 = p2;
-	// ajout du conducteur a la liste de conducteurs de chacune des deux Terminals
-	bool ajout_p1 = Terminal1 -> addConducteur(this);
-	bool ajout_p2 = Terminal2 -> addConducteur(this);
-	// en cas d'echec de l'ajout (conducteur deja existant notamment)
+	// bornes que le conductor relie
+	borne1 = p1;
+	borne2 = p2;
+	// ajout du conductor a la liste de conducteurs de chacune des deux bornes
+	bool ajout_p1 = borne1 -> addConducteur(this);
+	bool ajout_p2 = borne2 -> addConducteur(this);
+	// en cas d'echec de l'ajout (conductor deja existant notamment)
 	if (!ajout_p1 || !ajout_p2) return;
 	destroyed = false;
-	// le conducteur est represente par un trait fin
+	// le conductor est represente par un trait fin
 	QPen t;
 	t.setWidthF(1.0);
 	setPen(t);
-	// calcul du rendu du conducteur
+	// calcul du rendu du conductor
 	calculeConducteur();
 }
 
 /**
-	Met a jour la representation graphique du conducteur.
+	Met a jour la representation graphique du conductor.
 	@param rect Rectangle a mettre a jour
 */
 void Conductor::update(const QRectF &rect = QRectF()) {
@@ -37,7 +37,7 @@ void Conductor::update(const QRectF &rect = QRectF()) {
 }
 
 /**
-	Met a jour la representation graphique du conducteur.
+	Met a jour la representation graphique du conductor.
 	@param x      abscisse  du rectangle a mettre a jour
 	@param y      ordonnee du rectangle a mettre a jour
 	@param width  longueur du rectangle a mettre a jour
@@ -49,7 +49,7 @@ void Conductor::update(qreal x, qreal y, qreal width, qreal height) {
 }
 
 /**
-	Destructeur du Conductor. Avant d'etre detruit, le conducteur se decroche des Terminals
+	Destructeur du Conductor. Avant d'etre detruit, le conductor se decroche des bornes
 	auxquelles il est lie.
 */
 /*Conductor::~Conductor() {
@@ -57,14 +57,14 @@ void Conductor::update(qreal x, qreal y, qreal width, qreal height) {
 }*/
 
 /**
-	Met a jour le QPainterPath constituant le conducteur pour obtenir
-	un conducteur uniquement compose de droites reliant les deux Terminals.
+	Met a jour le QPainterPath constituant le conductor pour obtenir
+	un conductor uniquement compose de droites reliant les deux bornes.
 */
 void Conductor::calculeConducteur() {
 	QPainterPath t;
 	
-	QPointF p1 = Terminal1 -> amarrageConducteur();
-	QPointF p2 = Terminal2 -> amarrageConducteur();
+	QPointF p1 = borne1 -> amarrageConducteur();
+	QPointF p2 = borne2 -> amarrageConducteur();
 	
 	QPointF depart, arrivee;
 	Terminal::Orientation ori_depart, ori_arrivee;
@@ -72,13 +72,13 @@ void Conductor::calculeConducteur() {
 	if (p1.x() <= p2.x()) {
 		depart      = mapFromScene(p1);
 		arrivee     = mapFromScene(p2);
-		ori_depart  = Terminal1 -> orientation();
-		ori_arrivee = Terminal2 -> orientation();
+		ori_depart  = borne1 -> orientation();
+		ori_arrivee = borne2 -> orientation();
 	} else {
 		depart      = mapFromScene(p2);
 		arrivee     = mapFromScene(p1);
-		ori_depart  = Terminal2 -> orientation();
-		ori_arrivee = Terminal1 -> orientation();
+		ori_depart  = borne2 -> orientation();
+		ori_arrivee = borne1 -> orientation();
 	}
 	
 	// debut du trajet
@@ -120,9 +120,9 @@ void Conductor::calculeConducteur() {
 }
 
 /**
-	Dessine le conducteur sans antialiasing.
-	@param qp Le QPainter a utiliser pour dessiner le conducteur
-	@param qsogi Les options de style pour le conducteur
+	Dessine le conductor sans antialiasing.
+	@param qp Le QPainter a utiliser pour dessiner le conductor
+	@param qsogi Les options de style pour le conductor
 	@param qw Le QWidget sur lequel on dessine 
 */
 void Conductor::paint(QPainter *qp, const QStyleOptionGraphicsItem *qsogi, QWidget *qw) {
@@ -138,7 +138,7 @@ void Conductor::paint(QPainter *qp, const QStyleOptionGraphicsItem *qsogi, QWidg
 	Indique si deux orientations de Terminal sont sur le meme axe (Vertical / Horizontal).
 	@param a La premiere orientation de Terminal
 	@param b La seconde orientation de Terminal
-	@return Un booleen a true si les deux orientations de Terminals sont sur le meme axe
+	@return Un booleen a true si les deux orientations de bornes sont sur le meme axe
 */
 bool Conductor::surLeMemeAxe(Terminal::Orientation a, Terminal::Orientation b) {
 	if ((a == Terminal::Nord || a == Terminal::Sud) && (b == Terminal::Nord || b == Terminal::Sud)) return(true);
@@ -147,30 +147,30 @@ bool Conductor::surLeMemeAxe(Terminal::Orientation a, Terminal::Orientation b) {
 }
 
 /**
-	Indique si une orientation de Terminal est horizontale (Est / Ouest).
-	@param a L'orientation de Terminal
-	@return True si l'orientation de Terminal est horizontale, false sinon
+	Indique si une orientation de terminal est horizontale (Est / Ouest).
+	@param a L'orientation de terminal
+	@return True si l'orientation de terminal est horizontale, false sinon
 */
 bool Conductor::estHorizontale(Terminal::Orientation a) {
 	return(a == Terminal::Est || a == Terminal::Ouest);
 }
 
 /**
-	Indique si une orientation de Terminal est verticale (Nord / Sud).
-	@param a L'orientation de Terminal
-	@return True si l'orientation de Terminal est verticale, false sinon
+	Indique si une orientation de terminal est verticale (Nord / Sud).
+	@param a L'orientation de terminal
+	@return True si l'orientation de terminal est verticale, false sinon
 */
 bool Conductor::estVerticale(Terminal::Orientation a) {
 	return(a == Terminal::Nord || a == Terminal::Sud);
 }
 
 /**
-	Methode de preparation a la destruction du conducteur ; le conducteur se detache de ses deux Terminals
+	Methode de preparation a la destruction du conductor ; le conductor se detache de ses deux bornes
 */
 void Conductor::destroy() {
 	destroyed = true;
-	Terminal1 -> removeConducteur(this);
-	Terminal2 -> removeConducteur(this);
+	borne1 -> removeConducteur(this);
+	borne2 -> removeConducteur(this);
 }
 
 /**
@@ -180,19 +180,19 @@ void Conductor::destroy() {
 */
 bool Conductor::valideXml(QDomElement &e){
 	// verifie le nom du tag
-	if (e.tagName() != "conducteur") return(false);
+	if (e.tagName() != "conductor") return(false);
 	
 	// verifie la presence des attributs minimaux
-	if (!e.hasAttribute("Terminal1")) return(false);
-	if (!e.hasAttribute("Terminal2")) return(false);
+	if (!e.hasAttribute("borne1")) return(false);
+	if (!e.hasAttribute("borne2")) return(false);
 	
 	bool conv_ok;
 	// parse l'abscisse
-	e.attribute("Terminal1").toInt(&conv_ok);
+	e.attribute("borne1").toInt(&conv_ok);
 	if (!conv_ok) return(false);
 	
 	// parse l'ordonnee
-	e.attribute("Terminal2").toInt(&conv_ok);
+	e.attribute("borne2").toInt(&conv_ok);
 	if (!conv_ok) return(false);
 	return(true);
 }
