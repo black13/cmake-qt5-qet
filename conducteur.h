@@ -1,7 +1,7 @@
 #ifndef CONDUCTEUR_H
 	#define CONDUCTEUR_H
 	#include <QtWidgets>
-	#include "borne.h"
+	#include "terminal.h"
 	class Element;
 	/**
 		Cette classe represente un conducteur. Un conducteur relie deux bornes d'element.
@@ -20,9 +20,9 @@
 		void paint(QPainter *, const QStyleOptionGraphicsItem *, QWidget *);
 		static bool valideXml(QDomElement &);
 		
-		///Premiere borne a laquelle le fil est rattache
+		///Premiere terminal a laquelle le fil est rattache
 		Terminal *borne1;
-		///Deuxieme borne a laquelle le fil est rattache
+		///Deuxieme terminal a laquelle le fil est rattache
 		Terminal *borne2;
 		private:
 		/// booleen indiquant si le fil est encore valide

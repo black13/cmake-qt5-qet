@@ -147,18 +147,18 @@ bool Conducteur::surLeMemeAxe(Terminal::Orientation a, Terminal::Orientation b) 
 }
 
 /**
-	Indique si une orientation de borne est horizontale (Est / Ouest).
-	@param a L'orientation de borne
-	@return True si l'orientation de borne est horizontale, false sinon
+	Indique si une orientation de terminal est horizontale (Est / Ouest).
+	@param a L'orientation de terminal
+	@return True si l'orientation de terminal est horizontale, false sinon
 */
 bool Conducteur::estHorizontale(Terminal::Orientation a) {
 	return(a == Terminal::Est || a == Terminal::Ouest);
 }
 
 /**
-	Indique si une orientation de borne est verticale (Nord / Sud).
-	@param a L'orientation de borne
-	@return True si l'orientation de borne est verticale, false sinon
+	Indique si une orientation de terminal est verticale (Nord / Sud).
+	@param a L'orientation de terminal
+	@return True si l'orientation de terminal est verticale, false sinon
 */
 bool Conducteur::estVerticale(Terminal::Orientation a) {
 	return(a == Terminal::Nord || a == Terminal::Sud);

@@ -23,7 +23,7 @@ elementfixe.cpp
 entree.cpp
 panelappareils.cpp
 schema.cpp
-borne.cpp
+terminal.cpp
 contacteur.cpp
 element.cpp
 elementperso.cpp

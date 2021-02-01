@@ -40,9 +40,9 @@ bool ElementFixe::fromXml(QDomElement &e, QHash<int, Terminal *> &table_id_adr) 
 		if (bornes.isNull() || bornes.tagName() != "bornes") continue;
 		// parcours des enfants de l'element XML "bornes"
 		for (QDomNode node_borne = bornes.firstChild() ; !node_borne.isNull() ; node_borne = node_borne.nextSibling()) {
-			// on s'interesse a l'element XML "borne"
-			QDomElement borne = node_borne.toElement();
-			if (!borne.isNull() && Terminal::valideXml(borne)) liste_bornes.append(borne);
+			// on s'interesse a l'element XML "terminal"
+			QDomElement terminal = node_borne.toElement();
+			if (!terminal.isNull() && Terminal::valideXml(terminal)) liste_bornes.append(terminal);
 		}
 	}
 	

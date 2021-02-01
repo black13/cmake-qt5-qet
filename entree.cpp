@@ -10,7 +10,7 @@ Entree::Entree(QGraphicsItem *parent, Schema *scene) : ElementFixe(parent, scene
 	setSize(20, 40);
 	setHotspot(QPoint(10, 15));
 	
-	// ajout d'une borne a l'element
+	// ajout d'une terminal a l'element
 	new Terminal(0,  15, Terminal::Sud, this, scene);
 }
 

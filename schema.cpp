@@ -150,13 +150,13 @@ QDomDocument Schema::toXml(bool schema) {
 		QDomElement bornes = document.createElement("bornes");
 		// pour chaque enfant de l'element
 		foreach(QGraphicsItem *child, elmt -> childItems()) {
-			// si cet enfant est une borne
+			// si cet enfant est une terminal
 			if (Terminal *p = qgraphicsitem_cast<Terminal *>(child)) {
-				// alors on enregistre la borne
-				QDomElement borne = p -> toXml(document);
-				borne.setAttribute("id", id_borne);
+				// alors on enregistre la terminal
+				QDomElement terminal = p -> toXml(document);
+				terminal.setAttribute("id", id_borne);
 				table_adr_id.insert(p, id_borne ++);
-				bornes.appendChild(borne);
+				bornes.appendChild(terminal);
 			}
 		}
 		element.appendChild(bornes);

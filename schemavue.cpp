@@ -92,9 +92,9 @@ void SchemaVue::supprimer() {
 		if (!garbage_elmt.contains(qgi)) garbage_elmt.append(qgi);
 		// pour chaque enfant de l'element
 		foreach (QGraphicsItem *child, qgi -> childItems()) {
-			// si cet enfant est une borne
+			// si cet enfant est une terminal
 			if (Terminal *p = qgraphicsitem_cast<Terminal *>(child)) {
-				// alors chaque conducteur de la borne est recense
+				// alors chaque conducteur de la terminal est recense
 				foreach (Conducteur *f, p -> conducteurs()) {
 					if (!garbage_conducteurs.contains(f)) garbage_conducteurs.append(f);
 				}

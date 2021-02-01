@@ -1,0 +1,269 @@
+{
+	"BUILD_DIR" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build/qet_autogen",
+	"CMAKE_BINARY_DIR" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jjosburn/Documents/programming/cmake-qt5-qet",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/jjosburn/Documents/programming/cmake-qt5-qet/CMakeLists.txt",
+		"/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/3.19.1/CMakeSystem.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/3.19.1/CMakeCXXCompiler.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeGenericSystem.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeInitializeConfigs.cmake",
+		"/usr/share/cmake-3.19/Modules/Platform/Linux.cmake",
+		"/usr/share/cmake-3.19/Modules/Platform/UnixPaths.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeCXXInformation.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeLanguageInformation.cmake",
+		"/usr/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake",
+		"/usr/share/cmake-3.19/Modules/Compiler/GNU.cmake",
+		"/usr/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/usr/share/cmake-3.19/Modules/Internal/CMakeCheckCompilerFlag.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake",
+		"/usr/share/cmake-3.19/Modules/Platform/Linux-GNU-CXX.cmake",
+		"/usr/share/cmake-3.19/Modules/Platform/Linux-GNU.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeCommonLanguageInclude.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5/Qt5Config.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeParseArguments.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QWaylandEglPlatformIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QWaylandIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeEglPlatformIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QWaylandXCompositeGlxPlatformIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/usr/share/cmake-3.19/Modules/CMakeParseArguments.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5PrintSupport/Qt5PrintSupport_QCupsPrinterSupportPlugin.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Xml/Qt5XmlConfig.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/opt/qt5-15.2/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/home/jjosburn/Documents/programming/cmake-qt5-qet/qelectrotech.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/jjosburn/Documents/programming/cmake-qt5-qet",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/aboutqet.h",
+			"MU",
+			"EWIEGA46WW/moc_aboutqet.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/conducteur.h",
+			"MU",
+			"EWIEGA46WW/moc_conducteur.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/contacteur.h",
+			"MU",
+			"EWIEGA46WW/moc_contacteur.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/del.h",
+			"MU",
+			"EWIEGA46WW/moc_del.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/element.h",
+			"MU",
+			"EWIEGA46WW/moc_element.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/elementfixe.h",
+			"MU",
+			"EWIEGA46WW/moc_elementfixe.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/elementperso.h",
+			"MU",
+			"EWIEGA46WW/moc_elementperso.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/entree.h",
+			"MU",
+			"EWIEGA46WW/moc_entree.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/panelappareils.h",
+			"MU",
+			"EWIEGA46WW/moc_panelappareils.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/qetapp.h",
+			"MU",
+			"EWIEGA46WW/moc_qetapp.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/schema.h",
+			"MU",
+			"EWIEGA46WW/moc_schema.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/schemavue.h",
+			"MU",
+			"EWIEGA46WW/moc_schemavue.cpp"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/terminal.h",
+			"MU",
+			"EWIEGA46WW/moc_terminal.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build/qet_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build/qet_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_PRINTSUPPORT_LIB",
+		"QT_WIDGETS_LIB",
+		"QT_XML_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/opt/qt5-15.2/include",
+		"/opt/qt5-15.2/include/QtPrintSupport",
+		"/opt/qt5-15.2/include/QtWidgets",
+		"/opt/qt5-15.2/include/QtGui",
+		"/opt/qt5-15.2/include/QtCore",
+		"/opt/qt5-15.2/mkspecs/linux-g++",
+		"/opt/qt5-15.2/include/QtXml",
+		"/usr/include",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.19/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build/qet_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/qet_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/opt/qt5-15.2/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/opt/qt5-15.2/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/home/jjosburn/Documents/programming/cmake-qt5-qet/build/CMakeFiles/qet_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/aboutqet.cpp",
+			"MU"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/conducteur.cpp",
+			"MU"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/contacteur.cpp",
+			"MU"
+		],
+		[ "/home/jjosburn/Documents/programming/cmake-qt5-qet/del.cpp", "MU" ],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/element.cpp",
+			"MU"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/elementfixe.cpp",
+			"MU"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/elementperso.cpp",
+			"MU"
+		],
+		[ "/home/jjosburn/Documents/programming/cmake-qt5-qet/entree.cpp", "MU" ],
+		[ "/home/jjosburn/Documents/programming/cmake-qt5-qet/main.cpp", "MU" ],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/panelappareils.cpp",
+			"MU"
+		],
+		[ "/home/jjosburn/Documents/programming/cmake-qt5-qet/qetapp.cpp", "MU" ],
+		[ "/home/jjosburn/Documents/programming/cmake-qt5-qet/schema.cpp", "MU" ],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/schemavue.cpp",
+			"MU"
+		],
+		[
+			"/home/jjosburn/Documents/programming/cmake-qt5-qet/terminal.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

@@ -109,7 +109,7 @@ void ElementPerso::paint(QPainter *qp, const QStyleOptionGraphicsItem *) {
 }
 
 bool ElementPerso::parseElement(QDomElement &e, QPainter &qp, Schema *s) {
-	if (e.tagName() == "borne") return(parseBorne(e, s));
+	if (e.tagName() == "terminal") return(parseBorne(e, s));
 	else if (e.tagName() == "ligne") return(parseLigne(e, qp));
 	else if (e.tagName() == "cercle") return(parseCercle(e, qp));
 	else if (e.tagName() == "polygone") return(parsePolygone(e, qp));
