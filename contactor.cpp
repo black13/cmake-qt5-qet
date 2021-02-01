@@ -1,4 +1,4 @@
-#include "contacteur.h"
+#include "contactor.h"
 
 /**
 	Constructeur

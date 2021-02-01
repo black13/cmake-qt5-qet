@@ -24,7 +24,7 @@ entree.cpp
 panelappareils.cpp
 schema.cpp
 terminal.cpp
-contacteur.cpp
+contactor.cpp
 element.cpp
 elementperso.cpp
 main.cpp
