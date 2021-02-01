@@ -111,7 +111,7 @@ Terminal::Orientation Terminal::orientation() const {
 	Attribue un conducteur a la terminal
 	@param f Le conducteur a rattacher a cette terminal
 */
-bool Terminal::addConducteur(Conducteur *f) {
+bool Terminal::addConducteur(Conductor *f) {
 	// pointeur 0 refuse
 	if (!f) return(false);
 	
@@ -123,7 +123,7 @@ bool Terminal::addConducteur(Conducteur *f) {
 	
 	// verifie que la terminal n'est pas deja reliee avec l'autre terminal
 	bool deja_liees = false;
-	foreach (Conducteur* conducteur, liste_conducteurs) {
+	foreach (Conductor* conducteur, liste_conducteurs) {
 		if (conducteur -> borne1 == autre_borne || conducteur -> borne2 == autre_borne) deja_liees = true;
 	}
 	
@@ -135,7 +135,7 @@ bool Terminal::addConducteur(Conducteur *f) {
 	return(true);
 }
 
-void Terminal::removeConducteur(Conducteur *f) {
+void Terminal::removeConducteur(Conductor *f) {
 	int index = liste_conducteurs.indexOf(f);
 	if (index == -1) return;
 	liste_conducteurs.removeAt(index);
@@ -281,7 +281,7 @@ void Terminal::mouseMoveEvent(QGraphicsSceneMouseEvent *e) {
 				// si la terminal a deja un conducteur
 				// verifie que cette terminal n'est pas deja reliee a l'autre terminal
 				bool deja_reliee = false;
-				foreach (Conducteur *f, liste_conducteurs) {
+				foreach (Conductor *f, liste_conducteurs) {
 					if (f -> borne1 == p || f -> borne2 == p) {
 						deja_reliee = true;
 						break;
@@ -327,9 +327,9 @@ void Terminal::mouseReleaseEvent(QGraphicsSceneMouseEvent *e) {
 		bool cia = ((Element *)parentItem()) -> connexionsInternesAcceptees();
 		if (!cia) foreach(QGraphicsItem *item, parentItem() -> childItems()) if (item == p) return;
 		// derniere verification : verifier que cette terminal n'est pas deja reliee a l'autre terminal
-		foreach (Conducteur *f, liste_conducteurs) if (f -> borne1 == p || f -> borne2 == p) return;
+		foreach (Conductor *f, liste_conducteurs) if (f -> borne1 == p || f -> borne2 == p) return;
 		// autrement, on pose un conducteur
-		new Conducteur(this, (Terminal *)qgi, 0, scene());
+		new Conductor(this, (Terminal *)qgi, 0, scene());
 	}
 }
 
@@ -338,14 +338,14 @@ void Terminal::mouseReleaseEvent(QGraphicsSceneMouseEvent *e) {
 */
 void Terminal::updateConducteur() {
 	if (scene()) {
-		foreach (Conducteur *conducteur, liste_conducteurs) if (!conducteur -> isDestroyed()) conducteur -> update(QRectF()/*scene()->sceneRect()*/);
+		foreach (Conductor *conducteur, liste_conducteurs) if (!conducteur -> isDestroyed()) conducteur -> update(QRectF()/*scene()->sceneRect()*/);
 	}
 }
 
 /**
 	@return La liste des conducteurs lies a cette terminal
 */
-QList<Conducteur *> Terminal::conducteurs() const {
+QList<Conductor *> Terminal::conducteurs() const {
 	return(liste_conducteurs);
 }
 

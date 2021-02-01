@@ -6,12 +6,12 @@
 	/**
 		Cette classe represente un conducteur. Un conducteur relie deux bornes d'element.
 	*/
-	class Conducteur : public QGraphicsPathItem {
+	class Conductor : public QGraphicsPathItem {
 		public:
 		enum { Type = UserType + 1001 };
     	virtual int type() const { return Type; }
-		Conducteur(Terminal *, Terminal *, Element * = 0, QGraphicsScene * = 0);
-		//virtual ~Conducteur();
+		Conductor(Terminal *, Terminal *, Element * = 0, QGraphicsScene * = 0);
+		//virtual ~Conductor();
 		
 		void destroy();
 		bool isDestroyed() const { return(destroyed); }

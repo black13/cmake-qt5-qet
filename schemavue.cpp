@@ -95,7 +95,7 @@ void SchemaVue::supprimer() {
 			// si cet enfant est une terminal
 			if (Terminal *p = qgraphicsitem_cast<Terminal *>(child)) {
 				// alors chaque conducteur de la terminal est recense
-				foreach (Conducteur *f, p -> conducteurs()) {
+				foreach (Conductor *f, p -> conducteurs()) {
 					if (!garbage_conducteurs.contains(f)) garbage_conducteurs.append(f);
 				}
 			}
@@ -105,7 +105,7 @@ void SchemaVue::supprimer() {
 	
 	// "destroying" the wires, removing them from the scene and stocking them into the � garbage �
 	foreach (QGraphicsItem *qgi, garbage_conducteurs) {
-		if (Conducteur *f = qgraphicsitem_cast<Conducteur *>(qgi)) {
+		if (Conductor *f = qgraphicsitem_cast<Conductor *>(qgi)) {
 			f -> destroy();
 			scene -> removeItem(f);
 			throwToGarbage(f);

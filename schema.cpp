@@ -114,7 +114,7 @@ QDomDocument Schema::toXml(bool schema) {
 	
 	// creation de deux listes : une qui contient les elements, une qui contient les conducteurs
 	QList<Element *> liste_elements;
-	QList<Conducteur *> liste_conducteurs;
+	QList<Conductor *> liste_conducteurs;
 	
 	
 	// Determine les elements a � XMLiser �
@@ -122,7 +122,7 @@ QDomDocument Schema::toXml(bool schema) {
 		if (Element *elmt = qgraphicsitem_cast<Element *>(qgi)) {
 			if (schema) liste_elements << elmt;
 			else if (elmt -> isSelected()) liste_elements << elmt;
-		} else if (Conducteur *f = qgraphicsitem_cast<Conducteur *>(qgi)) {
+		} else if (Conductor *f = qgraphicsitem_cast<Conductor *>(qgi)) {
 			if (schema) liste_conducteurs << f;
 			// lorsqu'on n'exporte pas tout le schema, il faut retirer les conducteurs non selectionnes
 			// et pour l'instant, les conducteurs non selectionnes sont les conducteurs dont un des elements n'est pas relie
@@ -172,7 +172,7 @@ QDomDocument Schema::toXml(bool schema) {
 	// enregistrement des conducteurs
 	if (liste_conducteurs.isEmpty()) return(document);
 	QDomElement conducteurs = document.createElement("conducteurs");
-	foreach(Conducteur *f, liste_conducteurs) {
+	foreach(Conductor *f, liste_conducteurs) {
 		QDomElement conducteur = document.createElement("conducteur");
 		conducteur.setAttribute("borne1", table_adr_id.value(f -> borne1));
 		conducteur.setAttribute("borne2", table_adr_id.value(f -> borne2));
@@ -263,7 +263,7 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 		for (QDomNode n = conducteurs.firstChild() ; !n.isNull() ; n = n.nextSibling()) {
 			// on s'interesse a l'element XML "element" (elements eux-memes)
 			QDomElement f = n.toElement();
-			if (f.isNull() || !Conducteur::valideXml(f)) continue;
+			if (f.isNull() || !Conductor::valideXml(f)) continue;
 			// verifie que les bornes que le conducteur relie sont connues
 			int id_p1 = f.attribute("borne1").toInt();
 			int id_p2 = f.attribute("borne2").toInt();
@@ -275,7 +275,7 @@ bool Schema::fromXml(QDomDocument &document, QPointF position) {
 					bool peut_poser_conducteur = true;
 					bool cia = ((Element *)p2 -> parentItem()) -> connexionsInternesAcceptees();
 					if (!cia) foreach(QGraphicsItem *item, p2 -> parentItem() -> childItems()) if (item == p1) peut_poser_conducteur = false;
-					if (peut_poser_conducteur) new Conducteur(table_adr_id.value(id_p1), table_adr_id.value(id_p2), 0, this);
+					if (peut_poser_conducteur) new Conductor(table_adr_id.value(id_p1), table_adr_id.value(id_p2), 0, this);
 				}
 			} else qDebug() << "Le chargement du conducteur" << id_p1 << id_p2 << "a echoue";
 		}

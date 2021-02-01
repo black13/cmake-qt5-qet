@@ -3,12 +3,12 @@
 	#define TAILLE_BORNE 4
 	#include <QtWidgets>
 	#include <QtXml/QtXml>
-	class Conducteur;
+	class Conductor;
 	class Element;
 	class Schema;
 	/**
 		Classe modelisant la � terminal � d'un appareil, c'est-a-dire un
-		branchement possible pour un Conducteur.
+		branchement possible pour un Conductor.
 	*/
 	class Terminal : public QGraphicsItem {
 		public:
@@ -32,12 +32,12 @@
 		QRectF boundingRect() const;
 		
 		// methodes de manipulation des conducteurs lies a cette terminal
-		bool addConducteur(Conducteur *);
-		void removeConducteur(Conducteur *);
+		bool addConducteur(Conductor *);
+		void removeConducteur(Conductor *);
 		inline int nbConducteurs() { return(liste_conducteurs.size()); }
 		
 		// methodes de lecture
-		QList<Conducteur *> conducteurs() const; 
+		QList<Conductor *> conducteurs() const; 
 		Terminal::Orientation orientation() const;
 		inline QPointF amarrageConducteur() const { return(mapToScene(amarrage_conducteur)); }
 		void updateConducteur();
@@ -64,7 +64,7 @@
 		// orientation de la terminal
 		Terminal::Orientation sens;
 		// liste des conducteurs lies a cette terminal
-		QList<Conducteur *> liste_conducteurs;
+		QList<Conductor *> liste_conducteurs;
 		// pointeur vers un rectangle correspondant au bounding rect ; permet de ne calculer le bounding rect qu'une seule fois ; le pointeur c'est parce que le compilo exige une methode const
 		QRectF *br;
 		Terminal *borne_precedente;
