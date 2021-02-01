@@ -5,7 +5,7 @@
 #include <QPrinter>
 #include <QPrintDialog>
 	class SchemaVue;
-	class PanelAppareils;
+	class PanelDevice;
 	/**
 		Cette classe represente la fenetre principale de QElectroTech et,
 		ipso facto, la plus grande partie de l'interface graphique de QElectroTech.
@@ -89,7 +89,7 @@
 		/// Dock pour le Panel d'Appareils
 		QDockWidget *qdw_pa;
 		/// Panel d'Appareils
-		PanelAppareils *pa;
+		PanelDevice *pa;
 		/// Elements de menus pour l'icone du systray
 		QMenu *menu_systray;
 		QAction *systray_masquer;

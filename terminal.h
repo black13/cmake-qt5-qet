@@ -7,8 +7,8 @@
 	class Element;
 	class Schema;
 	/**
-		Classe modelisant la � terminal � d'un appareil, c'est-a-dire un
-		branchement possible pour un Conductor.
+	Class modeling the `` terminal '' of a device, i.e. a
+	connection possible for a Conductor.
 	*/
 	class Terminal : public QGraphicsItem {
 		public:

@@ -1,4 +1,4 @@
-#include "panelappareils.h"
+#include "paneldevice.h"
 #include "contactor.h"
 #include "del.h"
 #include "entree.h"
@@ -9,7 +9,7 @@
 	@param parent Le QWidget parent du panel d'appareils
 	@todo : definir une classe heritant de QListWidgetItem et automatiser tout ca
 */
-PanelAppareils::PanelAppareils(QWidget *parent) :  QListWidget(parent) {
+PanelDevice::PanelDevice(QWidget *parent) :  QListWidget(parent) {
 	
 	// selection unique
 	setSelectionMode(QAbstractItemView::SingleSelection);
@@ -65,13 +65,13 @@ PanelAppareils::PanelAppareils(QWidget *parent) :  QListWidget(parent) {
 /**
 	Gere le mouvement lors d'un drag'n drop
 */
-void PanelAppareils::dragMoveEvent(QDragMoveEvent */*e*/) {
+void PanelDevice::dragMoveEvent(QDragMoveEvent */*e*/) {
 }
 
 /**
 	Gere le depot lors d'un drag'n drop
 */
-void PanelAppareils::dropEvent(QDropEvent */*e*/) {
+void PanelDevice::dropEvent(QDropEvent */*e*/) {
 }
 
 /**
@@ -79,7 +79,7 @@ void PanelAppareils::dropEvent(QDropEvent */*e*/) {
 	@param supportedActions Les actions supportees
 	@todo virer les lignes type �if ("tel appareil") construire TelAppareil� => trouver un moyen d'automatiser ca
  */
-void PanelAppareils::startDrag(Qt::DropActions /*supportedActions*/) {
+void PanelDevice::startDrag(Qt::DropActions /*supportedActions*/) {
 	// objet QDrag pour realiser le drag'n drop
 	QDrag *drag = new QDrag(this);
 	

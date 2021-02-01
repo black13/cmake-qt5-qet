@@ -21,7 +21,7 @@ conductor.cpp
 del.cpp
 elementfixe.cpp
 entree.cpp
-panelappareils.cpp
+paneldevice.cpp
 schema.cpp
 terminal.cpp
 contactor.cpp
