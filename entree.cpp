@@ -55,7 +55,7 @@ void Entree::paint(QPainter *p, const QStyleOptionGraphicsItem *) {
 }
 
 /**
-	@return l'ID du type "Contacteur"
+	@return l'ID du type "Contactor"
 */
 QString Entree::typeId() {
 	return(QString("2"));

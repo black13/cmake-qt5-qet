@@ -26,7 +26,7 @@ PanelAppareils::PanelAppareils(QWidget *parent) :  QListWidget(parent) {
 	
 	// donnees
 	/*Element *del = new DEL(0,0);
-	Element *contacteur = new Contacteur(0,0);
+	Element *contacteur = new Contactor(0,0);
 	Element *entree = new Entree(0, 0);*/
 	
 	QListWidgetItem *qlwi;
@@ -77,7 +77,7 @@ void PanelAppareils::dropEvent(QDropEvent */*e*/) {
 /**
 	Gere le debut des drag'n drop
 	@param supportedActions Les actions supportees
-	@todo virer les lignes type «if ("tel appareil") construire TelAppareil» => trouver un moyen d'automatiser ca
+	@todo virer les lignes type ï¿½if ("tel appareil") construire TelAppareilï¿½ => trouver un moyen d'automatiser ca
  */
 void PanelAppareils::startDrag(Qt::DropActions /*supportedActions*/) {
 	// objet QDrag pour realiser le drag'n drop

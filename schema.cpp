@@ -295,7 +295,7 @@ Element *Schema::elementFromXml(QDomElement &e, QHash<int, Terminal *> &table_id
 	int etat;
 	Element *nvel_elmt = new ElementPerso(type, 0, 0, &etat);
 	/*switch(e.attribute("type").toInt()) {
-		case 0: nvel_elmt = new Contacteur(); break;
+		case 0: nvel_elmt = new Contactor(); break;
 		case 1: nvel_elmt = new DEL();        break;
 		case 2: nvel_elmt = new Entree();     break;
 	}*/
