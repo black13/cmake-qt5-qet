@@ -30,6 +30,7 @@ elementperso.cpp
 main.cpp
 qetapp.cpp
 schemavue.cpp
+qelectrotech.qrc
 )
 
 target_link_libraries(qet Qt5::PrintSupport Qt5::Xml Qt5::Widgets)
